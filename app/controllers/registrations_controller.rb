@@ -17,6 +17,11 @@ class RegistrationsController < ApplicationController
   # is a very dumb, single-request registration process.
   # It is the wise adventurer that doesn't overthink the task!
 
+  post '/new' do
+    @email = params[:email]
+    erb :new_user
+  end
+
 
   get '/new' do
     throw Unauthorized unless user_registered?
@@ -41,7 +46,11 @@ class RegistrationsController < ApplicationController
   def user_registered?
     # TODO: you'll need a way for your registration to set a value that
     # will make this true when your /new looks at it.
-    false
+    if @email != nil
+      true
+    else
+      false
+    end
   end
 
 end
