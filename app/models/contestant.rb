@@ -1,5 +1,5 @@
 class Contestant
-  attr_reader :hashtag, :tweets, :scores, :average, :positive, :negative, :neutral, :name
+  attr_reader :hashtag, :tweets, :scores, :average, :positive, :negative, :neutral, :name, :median
 
   def initialize(param)
     @hashtag = check_param(param)
@@ -8,7 +8,7 @@ class Contestant
     @average = analyze_tweets(@scores)
     @name = get_name
     set_result
-    get_median_tweets
+    @median = get_median_tweets
   end
 
   def check_param(param)
@@ -94,7 +94,6 @@ class Contestant
     new_array.map! do |tweet|
       tweet[1]
     end
-    binding.pry
   end
 
 end

@@ -13,16 +13,40 @@ h1, h2 {
   text-shadow: 2px 2px 8px #444;
 }
 
+h3 {
+  color: #fff;
+  font-size: 2em;
+  font-family: 'Alfa Slab One', sans-serif;
+  text-align: center;
+  text-shadow: 2px 2px 8px #444;
+}
+
+ul {
+  font-family: 'Voces';
+}
+
 .wrapper {
   margin: 10% 5% 0 5%;
 }
 
 .left {
+  width: 48%;
+  float: left;
+}
+
+.left ul {
+  width: 50%;
   float: left;
 }
 
 .right {
+  width: 48%;
   float: right;
+}
+
+.right ul {
+  width: 50%;
+  float: left;
 }
 
 .center {
