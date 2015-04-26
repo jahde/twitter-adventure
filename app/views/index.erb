@@ -1,17 +1,28 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <title>XYZZY</title>
-  </head>
-  <body>
-  It's a bright, cold day in April and the clocks are already striking thirteen.
-  <br /><br />
-  You find yourself alone on a horribly-designed website with nothing but a mouse, a text editor, and, for some reason, access to the server code.<br />
-  Here, there should be a link to a place to register. You'll need to look at the application's routes and figure out how to link to that page. Once you've done that, click it, and see what happens.
-  <br />
-  <br />
-  Remove these instructions when you have completed the task.
-  <br />
-  <br />
-  <a href="/register">Register</a>
+<head>
+  <meta charset="utf-8" />
+  <title></title>
 
+  <title>Compare Two Things</title>
+  <link rel="stylesheet" href="/css/idea.css">
 
+  <script src="//www.google.com/jsapi"></script>
+  <script src="/script/chartkick.js"></script>
+</head>
+<body>
+<div class="wrapper">
+  <h1>Compare Two Things</h1>
+  <form action="/contestant" method="POST">
+    <div class="clearfix">
+      <!-- <label for="thing_1">Thing 1:</label> -->
+      <input class="left" type="text" name="thing_1" id="gender" value="(the first thing)">
+      <!-- <label for="thing_2">Thing 1:</label> -->
+      <input class="right" type="text" name="thing_2" id="gender" value="(the second thing)">
+
+    </div><!-- clearfix -->
+    <input class= "center"type="submit" value="compare the things!">
+  </form>
+</div><!-- wrapper -->
+</body>
+</html>

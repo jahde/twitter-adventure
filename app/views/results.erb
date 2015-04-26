@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+
+  <title>Compare Two Things</title>
+  <link rel="stylesheet" href="/css/idea.css">
+
+  <!--<script src="//www.google.com/jsapi"></script>
+  <script src="/script/chartkick.js"></script>-->
+
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+      <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+          var data1 = google.visualization.arrayToDataTable([
+            ['Task', 'Tweets per Day'],
+            ['Positive',<%= @contestant1.positive.count %>],
+            ['Negative', <%= @contestant1.negative.count %>],
+            ['Neutral', <%= @contestant1.neutral.count %>]
+          ]);
+
+          var data2 = google.visualization.arrayToDataTable([
+            ['Task', 'Tweets per Day'],
+            ['Positive',<%= @contestant2.positive.count %>],
+            ['Negative', <%= @contestant2.negative.count %>],
+            ['Neutral', <%= @contestant2.neutral.count %>]
+          ]);
+
+          var options1 = {
+            title: '<%= @contestant1.hashtag %>',
+            is3D: true,
+            colors: ['green', 'red', 'blue']
+          };
+
+          var options2 = {
+            title: '<%= @contestant2.hashtag %>',
+            is3D: true,
+            colors: ['green', 'red', 'blue']
+          };
+
+          var chart1 = new google.visualization.PieChart(document.getElementById('piechart1'));
+          chart1.draw(data1, options1);
+          var chart2 = new google.visualization.PieChart(document.getElementById('piechart2'));
+          chart2.draw(data2, options2);
+        }
+      </script>
+</head>
+
+<body>
+  <h1>Results:</h1>
+
+  <div class="clearfix">
+    <div class="left">
+      <h2><%= @contestant1.name %></h2>
+      <div id="piechart1" style="width: 700px; height: 500px;"></div>
+    </div><!--left-->
+    <div class="right">
+      <h2><%= @contestant2.name %></h2>
+      <div id="piechart2" style="width: 700px; height: 500px;"></div>
+    </div><!--right-->
+  </div><!--clearfix-->
+</body>
+
+
+

@@ -1,6 +1,10 @@
 source 'https://rubygems.org'
 
+gem 'shotgun'
+gem 'chartkick'
 gem 'rack'
+gem 'twitter'
+gem 'sentimental'
 gem 'sinatra'
 gem 'sinatra-contrib'
 gem 'pry'

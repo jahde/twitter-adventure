@@ -1,0 +1,62 @@
+@import url(http://fonts.googleapis.com/css?family=Alfa+Slab+One|Voces);
+
+html, body {
+  background: linear-gradient(#FFA600, #FF7300);
+  height: 100%;
+}
+
+h1, h2 {
+  color: #fff;
+  font-size: 4em;
+  font-family: 'Alfa Slab One', sans-serif;
+  text-align: center;
+  text-shadow: 2px 2px 8px #444;
+}
+
+.wrapper {
+  margin: 10% 5% 0 5%;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.center {
+  font-size: 1.5em;
+  display: block;
+  height: 60px;
+  margin: 50px auto;
+  background: #fff;
+  color: #444;
+  width: 60%;
+  cursor: pointer;
+  box-shadow: 1px 1px 10px #444;
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+form {
+  margin: 0 15% 0 15%;
+}
+
+input {
+  height: 30px;
+  font-family: Voces;
+  font-size: 1em;
+  color: #888;
+  border: 1px #aaa solid;
+  border-radius: 5px;
+
+}
+
+input:focus {
+  color: #444;
+}
