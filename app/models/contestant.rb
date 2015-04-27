@@ -1,5 +1,5 @@
 class Contestant
-  attr_reader :hashtag, :tweets, :scores, :average, :positive, :negative, :neutral, :name, :median
+  attr_reader :hashtag, :tweets, :scores, :average, :positive, :negative, :neutral, :name, :median, :coordinates
 
   def initialize(param)
     @hashtag = check_param(param)
@@ -7,8 +7,8 @@ class Contestant
     @scores = get_scores(@tweets)
     @average = analyze_tweets(@scores)
     @name = get_name
-    set_result
     @median = get_median_tweets
+    set_result
   end
 
   def check_param(param)
@@ -29,11 +29,18 @@ class Contestant
       config.access_token        = keys['ACCESS_TOKEN']
       config.access_token_secret = keys['ACCESS_TOKEN_SECRET']
     end
-
     tweets = client.search(hashtag).take(100)
+    # @coordinates = get_coordinates(tweets)
     tweets.reject! {|tweet| tweet.text.include?("RT")}
     tweets.map! {|tweet| tweet.text}
   end
+
+  # def get_coordinates(tweets)
+  #   geo_array = []
+  #   tweets.each do |tweet|
+  #     unless tweet.geo.class == Twitter::NullObject
+  #   end.reject{|tweet| tweet == nil}
+  # end
 
   def get_scores(tweets)
     Sentimental.load_defaults
@@ -79,11 +86,9 @@ class Contestant
 
   def get_median_tweets
     arr = []
-
     @tweets.each_with_index do |tweet,index|
       arr << [scores[index],tweets[index]]
     end
-
     array_median(arr.sort! {|x,y| x[0] <=> y[0]})
   end
 

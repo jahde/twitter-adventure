@@ -1,7 +1,13 @@
 @import url(http://fonts.googleapis.com/css?family=Alfa+Slab+One|Voces);
 
-html, body {
-  background: linear-gradient(#FFA600, #FF7300);
+body {
+  background: url('../images/boxinggloves.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  background-color: #444;
   height: 100%;
 }
 
@@ -23,6 +29,8 @@ h3 {
 
 ul {
   font-family: 'Voces';
+  color: white;
+  font-size: 1.1em;
 }
 
 .wrapper {
@@ -61,6 +69,17 @@ ul {
   box-shadow: 1px 1px 10px #444;
 }
 
+#columnchart_values {
+  width: 1450px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.bottom {
+  width: 100%;
+  margin: 0 auto;
+}
+
 .clearfix:after {
     content: "";
     display: table;
@@ -84,3 +103,9 @@ input {
 input:focus {
   color: #444;
 }
+
+.center-center {
+  margin-left: 33%;
+}
+
+

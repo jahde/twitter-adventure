@@ -22,10 +22,8 @@ class RootController < Sinatra::Base
     @contestant1 = Contestant.new(param1)
     @contestant2 = Contestant.new(param2)
 
-    # @winner = @contestant1.average > @contest2.average ? @contestant1 : @contestant2
-    # @loser = @contestant1.average > @contest2.average ? @contestant2 : @contestant1
-    binding.pry
-
+    @winner = @contestant1.average > @contestant2.average ? @contestant1 : @contestant2
+    @loser = @contestant1.average > @contestant2.average ? @contestant2 : @contestant1
     erb :results
   end
 

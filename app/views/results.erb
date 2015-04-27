@@ -50,8 +50,8 @@
           // bar chart showing the averages
           var data = google.visualization.arrayToDataTable([
                   ["Tweet", "Sentiment", { role: "style" } ],
-                  ["<%= @contestant1.name %>", <%= @contestant1.average %>, "#b87333"],
-                  ["<%= @contestant2.name %>", <%= @contestant2.average %>, "silver"]
+                  ["<%= @winner.name %>", <%= @winner.average %>, "green"],
+                  ["<%= @loser.name %>", <%= @loser.average %>, "red"]
                 ]);
 
                 var view = new google.visualization.DataView(data);
@@ -63,7 +63,7 @@
                                  2]);
 
                 var options = {
-                  title: "Average of contestant tweets",
+                  title: "Average Sentiment",
                   width: 600,
                   height: 400,
                   bar: {groupWidth: "95%"},
@@ -73,6 +73,7 @@
                 chart.draw(view, options);
         }
       </script>
+
 </head>
 
 <body>
@@ -81,7 +82,7 @@
   <div class="clearfix">
     <div class="left">
       <h2><%= @contestant1.name %></h2>
-      <div id="piechart1" style="width: 700px; height: 500px;"></div>
+      <div id="piechart1" style="width: 600px; height: 430px;"></div>
       <h3><%= @contestant1.name %> Median Tweets</h3>
       <ul>
         <% @contestant1.median.each do |tweet| %>
@@ -92,7 +93,7 @@
 
     <div class="right">
       <h2><%= @contestant2.name %></h2>
-      <div id="piechart2" style="width: 700px; height: 500px;"></div>
+      <div id="piechart2" style="width: 600px; height: 430px;"></div>
       <h3><%= @contestant2.name %> Median Tweets</h3>
       <ul>
         <% @contestant2.median.each do |tweet| %>
@@ -106,9 +107,24 @@
 
   <!-- bottom bar chart of averages -->
   <div class="bottom">
-    <h3>Contestant average tweets</h3>
-    <div id="columnchart_values" style="width: 900px; height: 300px;"></div>
+    <h3>Average Tweet Sentiment</h3>
+    <div class="center-center">
+      <div id="columnchart_values" style="width: 1400px; height: 500px;"></div>
+    </div>
   </div>
+<!--   
+  <div class="bottom">
+    <h3>Tweet Locations</h3>
+    <div class="center-center">
+      <div id="map_div" style="width: 1400px; height: 600px"></div>
+    </div>
+  </div>
+ -->
+
+
+
+
+  
 
 </body>
 
