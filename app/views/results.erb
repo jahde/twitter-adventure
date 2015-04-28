@@ -82,7 +82,7 @@
   <div class="clearfix">
     <div class="left">
       <h2><%= @contestant1.name %></h2>
-      <div id="piechart1" style="width: 600px; height: 430px;"></div>
+      <div id="piechart1" style="width: 450px; height: 350px;"></div>
       <h3><%= @contestant1.name %> Median Tweets</h3>
       <ul>
         <% @contestant1.median.each do |tweet| %>
@@ -93,7 +93,7 @@
 
     <div class="right">
       <h2><%= @contestant2.name %></h2>
-      <div id="piechart2" style="width: 600px; height: 430px;"></div>
+      <div id="piechart2" style="width: 450px; height: 350px;"></div>
       <h3><%= @contestant2.name %> Median Tweets</h3>
       <ul>
         <% @contestant2.median.each do |tweet| %>
@@ -108,9 +108,8 @@
   <!-- bottom bar chart of averages -->
   <div class="bottom">
     <h3>Average Tweet Sentiment</h3>
-    <div class="center-center">
-      <div id="columnchart_values" style="width: 1400px; height: 500px;"></div>
-    </div>
+      <div id="columnchart_values" style="width: 600px; height: 400px;"></div>
+ 
   </div>
 <!--   
   <div class="bottom">

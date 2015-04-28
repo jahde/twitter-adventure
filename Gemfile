@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'slide_hero'
 gem 'shotgun'
 gem 'chartkick'
 gem 'rack'
